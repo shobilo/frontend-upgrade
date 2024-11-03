@@ -12,7 +12,9 @@
         // common js to import/export
         "esModuleInterop": true,
         // imports without * as prefix
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        // absolute paths
+        "baseUrl": ".",
     },
     //
     "ts-node": {

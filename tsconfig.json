@@ -14,7 +14,7 @@
         // imports without * as prefix
         "allowSyntheticDefaultImports": true,
         // absolute paths
-        "baseUrl": ".",
+        // "baseUrl": ".",
     },
     //
     "ts-node": {

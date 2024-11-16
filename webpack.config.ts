@@ -1,7 +1,11 @@
 import webpack from "webpack";
 
 import path from "path";
-import { BuildEnv, BuildPaths } from "./config/webpackBuild/types/config";
+import {
+  BuildEnv,
+  BuildMode,
+  BuildPaths,
+} from "./config/webpackBuild/types/config";
 import { buildWebpackConfig } from "./config/webpackBuild/buildWebpackConfig";
 
 export default (env: BuildEnv) => {
@@ -11,8 +15,8 @@ export default (env: BuildEnv) => {
     html: path.resolve(__dirname, "public", "index.html"),
   };
 
-  const mode = env.mode || "development";
-  const isDev = mode === "development";
+  const mode = env.mode || BuildMode.Development;
+  const isDev = mode === BuildMode.Development;
   const port = env.port || 3000;
 
   const config: webpack.Configuration = buildWebpackConfig({

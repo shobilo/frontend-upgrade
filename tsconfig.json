@@ -14,7 +14,12 @@
         // imports without * as prefix
         "allowSyntheticDefaultImports": true,
         // absolute paths
-        // "baseUrl": ".",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
     },
     //
     "ts-node": {

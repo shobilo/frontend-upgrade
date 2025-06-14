@@ -1,6 +1,6 @@
 export enum BuildMode {
-  Production = "production",
-  Development = "development",
+  PRODUCTION = "production",
+  DEVELOPMENT = "development",
 }
 export interface BuildPaths {
   entry: string;

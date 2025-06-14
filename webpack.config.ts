@@ -16,8 +16,8 @@ export default (env: BuildEnv) => {
     src: path.resolve(__dirname, "src"),
   };
 
-  const mode = env.mode || BuildMode.Development;
-  const isDev = mode === BuildMode.Development;
+  const mode = env.mode || BuildMode.DEVELOPMENT;
+  const isDev = mode === BuildMode.DEVELOPMENT;
   const port = env.port || 3000;
 
   const config: webpack.Configuration = buildWebpackConfig({

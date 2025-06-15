@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Sidebar.module.scss";
-import { useState } from "react";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { LangSwitcher } from "@/widgets/LangSwircher";
 import { Button } from "@/shared/ui/Button/Button";
@@ -17,7 +17,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       className={classNames(
         styles.Sidebar,
         { [styles.collapsed]: isCollapsed },
-        [className]
+        [className],
       )}
     >
       <Button

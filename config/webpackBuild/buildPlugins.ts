@@ -6,8 +6,8 @@ import {
   DefinePlugin,
   HotModuleReplacementPlugin,
 } from "webpack";
-import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({
   paths,
@@ -18,7 +18,7 @@ export const buildPlugins = ({
   plugins.push(
     new HtmlWebpackPlugin({
       template: paths.html,
-    })
+    }),
   );
 
   plugins.push(new ProgressPlugin());
@@ -27,13 +27,13 @@ export const buildPlugins = ({
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
-    })
+    }),
   );
 
   plugins.push(
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-    })
+    }),
   );
 
   if (isDev) {

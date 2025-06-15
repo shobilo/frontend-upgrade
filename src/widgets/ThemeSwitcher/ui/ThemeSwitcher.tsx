@@ -1,3 +1,4 @@
+import React from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./ThemeSwitcher.module.scss";
 import { Theme, useTheme } from "@/app/providers/ThemeProvider";

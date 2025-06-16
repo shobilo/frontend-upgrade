@@ -1,8 +1,8 @@
 {
   "language": "English",
-  "loading": "Loading...",
   "navigation": {
     "Main Page": "Main Page",
     "About": "About"
-  }
+  },
+  "NotFound": "Page Not Found"
 }

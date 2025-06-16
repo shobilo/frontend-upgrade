@@ -6,13 +6,13 @@ export enum NavbarItems {
   ABOUT_PAGE = "About",
 }
 
-export const navbarConfig: Record<AppRoutes, AppLinkProps> = {
-  [AppRoutes.MAIN]: {
+export const navbarConfig: Record<NavbarItems, AppLinkProps> = {
+  [NavbarItems.MAIN_PAGE]: {
     to: RoutePath[AppRoutes.MAIN],
     theme: AppLinkTheme.INVERTED,
     children: NavbarItems.MAIN_PAGE,
   },
-  [AppRoutes.ABOUT]: {
+  [NavbarItems.ABOUT_PAGE]: {
     to: RoutePath[AppRoutes.ABOUT],
     theme: AppLinkTheme.INVERTED,
     children: NavbarItems.ABOUT_PAGE,

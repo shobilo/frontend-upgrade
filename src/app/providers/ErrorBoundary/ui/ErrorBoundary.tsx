@@ -10,8 +10,7 @@ interface ErrorBoundaryState {
     hasError: boolean;
 }
 
-export class ErrorBoundary
-  extends React.PureComponent<ErrorBoundaryProps, ErrorBoundaryState> {
+export class ErrorBoundary extends React.PureComponent<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };

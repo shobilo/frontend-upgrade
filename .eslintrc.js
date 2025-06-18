@@ -27,7 +27,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     indent: [2, 2],
-    "max-len": ["error", { ignoreComments: true }],
+    "max-len": ["error", { ignoreComments: true, code: 120 }],
     "no-shadow": "off",
     "no-underscore-dangle": "off",
     "no-unused-vars": "off",

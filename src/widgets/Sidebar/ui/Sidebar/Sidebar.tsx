@@ -14,6 +14,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
 
   return (
     <div
+      data-testid="sidebar"
       className={classNames(
         styles.Sidebar,
         { [styles.collapsed]: isCollapsed },
@@ -21,6 +22,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       )}
     >
       <Button
+        data-testid="sidebar-toggle"
         className={styles.langSwitcher}
         onClick={() => setIsCollapsed((prev) => !prev)}
       >

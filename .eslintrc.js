@@ -20,7 +20,7 @@ module.exports = {
     "linebreak-style": "off",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, ignoreAttribute: ["as"] },
+      { markupOnly: true, ignoreAttribute: ["as", "data-testid"] },
     ],
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
@@ -48,4 +48,12 @@ module.exports = {
     __IS_DEV__: true,
     React: true,
   },
+  overrides: [
+    {
+      files: ["**/src/**/*.test.{ts,tsx}"],
+      rules: {
+        "i18next/no-literal-string": "off",
+      },
+    },
+  ],
 };

@@ -2,6 +2,10 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+import path from "path";
+
+const { pathsToModuleNameMapper } = require("ts-jest");
+const { compilerOptions } = require("../../tsconfig.json");
 
 export default {
   // Automatically clear mock calls, instances and results before every test
@@ -30,8 +34,26 @@ export default {
   // A preset that is used as a base for Jest's configuration
   preset: "ts-jest",
 
+  // A map from regular expressions to module names or to arrays
+  // of module names that allow to stub out resources with a single module
+  moduleNameMapper: {
+    ...pathsToModuleNameMapper(compilerOptions.paths, {
+      prefix: "<rootDir>",
+    }),
+    "\\.s?css$": "identity-obj-proxy",
+  },
+
+  // An array of file paths to be considered "module roots"
+  modulePaths: [
+    "<rootDir>src",
+  ],
+
   // The root directory that Jest should scan for tests and modules within
   rootDir: "../../",
+
+  // A list of paths to modules that run some code
+  // to configure or set up the testing framework before each test
+  setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
 
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
@@ -44,6 +66,7 @@ export default {
   // A map from regular expressions to paths to transformers
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.svg$": "<rootDir>/config/jest/jestSvg.js",
   },
 
   // All imported modules in your tests should be mocked automatically
@@ -104,10 +127,6 @@ export default {
   // maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
 
-  // A map from regular expressions to module names or to arrays
-  // of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
-
   // An array of regexp pattern strings, matched against all
   // module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -147,10 +166,6 @@ export default {
   // The paths to modules that run some code to configure
   // or set up the testing environment before each test
   // setupFiles: [],
-
-  // A list of paths to modules that run some code
-  // to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
 
   // The number of seconds after which a test is considered
   // as slow and reported as such in the results.

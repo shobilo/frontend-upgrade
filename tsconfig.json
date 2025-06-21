@@ -1,19 +1,14 @@
 {
     "compilerOptions": {
-        // bundle place
         "outDir": "./build/",
         "noImplicitAny": true,
         "module": "ESNext",
-        // compile to es5 for the browser
         "target": "es5",
         "jsx": "react-jsx",
         "allowJs": true,
         "moduleResolution": "node",
-        // common js to import/export
         "esModuleInterop": true,
-        // imports without * as prefix
         "allowSyntheticDefaultImports": true,
-        // absolute paths
         "baseUrl": ".",
         "paths": {
             "@/*": [
@@ -21,11 +16,18 @@
             ]
         }
     },
-    //
     "ts-node": {
         "compilerOptions": {
-            // fix ts-node support of commonjs
-            "module": "commonjs"
+            "module": "CommonJS"
         }
-    }
+    },
+    "include": [
+        "./config/jest/setupTests.ts",
+        "."
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist"
+    ]
 }

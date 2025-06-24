@@ -20,7 +20,7 @@ module.exports = {
     "linebreak-style": "off",
     "i18next/no-literal-string": [
       "error",
-      { markupOnly: true, ignoreAttribute: ["as", "data-testid"] },
+      { markupOnly: true, ignoreAttribute: ["as", "data-testid", "to"] },
     ],
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",

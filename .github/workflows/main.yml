@@ -1,0 +1,28 @@
+name: Lint, Test, Build
+on: 
+  push:
+    branches: [ main ]
+  pull_request: 
+    branches: [ main ]
+jobs:
+  my-job-name:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install
+      - name: Build production project
+        run: npm run build:prod
+      - name: TS Lint Check
+        run: npm run lint:ts
+      - name: SCSS Lint Check
+        run: npm run lint:scss
+      - name: Unit tests run
+        run: npm run test:unit

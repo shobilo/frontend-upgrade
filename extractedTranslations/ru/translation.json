@@ -5,5 +5,6 @@
   "ReloadPage": "ReloadPage",
   "SomethingWentWrong": "SomethingWentWrong",
   "language": "language",
+  "languageShort": "languageShort",
   "loading": "loading"
 }

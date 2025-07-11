@@ -1,7 +1,8 @@
 {
   "language": "Русский",
+  "languageShort": "Рус",
   "navigation": {
-    "Main Page": "Главная страница",
+    "Main Page": "Главная",
     "About": "О нас"
   },
   "NotFound": "Страница не найдена",

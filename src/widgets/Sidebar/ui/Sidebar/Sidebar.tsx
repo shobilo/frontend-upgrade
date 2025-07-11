@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Sidebar.module.scss";
 import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
 import { LangSwitcher } from "@/widgets/LangSwircher";
-import { Button } from "@/shared/ui/Button/Button";
+import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
+import { navbarConfig } from "@/shared/config/navbarConfig/navbarConfig";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface SidebarProps {
   className?: string;
@@ -11,6 +14,8 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
+
+  const { t } = useTranslation("translation");
 
   return (
     <div
@@ -23,14 +28,32 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
     >
       <Button
         data-testid="sidebar-toggle"
-        className={styles.langSwitcher}
         onClick={() => setIsCollapsed((prev) => !prev)}
+        theme={ButtonTheme.BACKGROUND}
+        isSquare
+        size={ButtonSize.L}
       >
-        |||
+        {isCollapsed ? ">" : "<"}
       </Button>
+      <div className={styles.items}>
+        {Object.values(navbarConfig).map(
+          ({
+            to, theme, children, icon: Icon,
+          }) => (
+            <AppLink
+              to={to}
+              theme={theme}
+              className={styles.item}
+            >
+              <Icon className={styles.icon} />
+              {!isCollapsed && <p>{t("navigation.".concat(children as string))}</p>}
+            </AppLink>
+          ),
+        )}
+      </div>
       <div className={styles.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher isShort={isCollapsed} />
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ export enum AppLinkTheme {
 export interface AppLinkProps extends LinkProps {
   className?: string;
   theme?: AppLinkTheme;
+  icon?: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
 export const AppLink: React.FC<AppLinkProps> = ({

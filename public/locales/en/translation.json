@@ -1,7 +1,8 @@
 {
   "language": "English",
+  "languageShort": "EN",
   "navigation": {
-    "Main Page": "Main Page",
+    "Main Page": "Main",
     "About": "About"
   },
   "NotFound": "Page Not Found",

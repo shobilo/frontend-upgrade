@@ -25,15 +25,8 @@
       align-items: center;
       gap: 10px;
 
-      p {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-      }
-
       p.collapsed {
-        opacity: 0;
-        width: 0;
-        transition: opacity 0.3s ease;
+        display: none;
       }
     }
   }

@@ -44,9 +44,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
               to={to}
               theme={theme}
               className={styles.item}
+              key={to.toString() as string}
             >
               <Icon className={styles.icon} />
-              {!isCollapsed && <p>{t("navigation.".concat(children as string))}</p>}
+              <p className={classNames("", {
+                [styles.collapsed]: isCollapsed,
+              })}
+              >
+                {t("navigation.".concat(children as string))}
+              </p>
             </AppLink>
           ),
         )}

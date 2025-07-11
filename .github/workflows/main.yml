@@ -22,11 +22,16 @@ jobs:
         run: npm run build:prod
       - name: TS Lint Check
         run: npm run lint:ts
+        if: always()
       - name: SCSS Lint Check
         run: npm run lint:scss
+        if: always()
       - name: Unit tests run
         run: npm run test:unit
+        if: always()
       - name: Build storybook for Loki
         run: npm run storybook:build
+        if: always()
       - name: Loki UI screenshot tests run
         run: npm run test:ui:ci
+        if: always()

@@ -23,4 +23,5 @@ export const classNames = (
     .map(([className]) => className),
 ]
   .join(" ")
+  .replace(",", " ")
   .trim();

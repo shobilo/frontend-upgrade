@@ -7,5 +7,6 @@
   },
   "NotFound": "Page Not Found",
   "SomethingWentWrong": "Something Went Wrong...",
-  "ReloadPage": "Reload Page"
+  "ReloadPage": "Reload Page",
+  "Login": "Login"
 }

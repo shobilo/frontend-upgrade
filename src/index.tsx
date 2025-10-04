@@ -6,6 +6,8 @@ import App from "@/app/App";
 import i18n from "./shared/config/i18n/i18n";
 import { ErrorBoundary } from "./app/providers/ErrorBoundary";
 
+import "./app/styles/index.scss";
+
 render(
   <BrowserRouter>
     <I18nextProvider i18n={i18n}>

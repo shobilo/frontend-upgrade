@@ -12,22 +12,11 @@ interface ModalProps {
 
 const ANIMATION_DURATION = 300;
 
-const getLastAppNode = () => {
-  const appNodes = document.getElementsByClassName("app");
-
-  if (appNodes.length > 0) {
-    return appNodes[appNodes.length - 1] as HTMLElement;
-  }
-
-  return null;
-};
-
 export const Modal: React.FC<ModalProps> = ({
   className, children, isOpen, onClose,
 }) => {
   const [isClosing, setIsClosing] = React.useState<boolean>(false);
   const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
-  const lastAppNode = getLastAppNode();
 
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
@@ -69,7 +58,7 @@ export const Modal: React.FC<ModalProps> = ({
   }, [isOpen, onKeyDown]);
 
   return (
-    <Portal element={lastAppNode || document.body}>
+    <Portal>
       <div className={classNames(styles.Modal, mods, [className])}>
         <div className={styles.overlay} onClick={closeHandler}>
           <div className={styles.content} onClick={onContentClick}>

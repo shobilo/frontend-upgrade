@@ -16,14 +16,14 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const Light = Template.bind({});
 Light.args = {
   children: "Text",
-  isOpen: false,
+  isOpen: true,
   onClose: () => {},
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
   children: "Text",
-  isOpen: false,
+  isOpen: true,
   onClose: () => {},
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
